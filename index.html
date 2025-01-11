@@ -3,43 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personalized Learning Roadmap</title>
+  <title>Personalized Learning Planner</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Personalized Learning Roadmap</h1>
-    <form id="recommendations-form">
-      <div class="form-group">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" placeholder="Enter your name" required />
-      </div>
-      <div class="form-group">
-        <label for="interests">Your Interests (comma-separated):</label>
-        <textarea id="interests" placeholder="Enter interests like Python, JavaScript, Data Science, etc." required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="learning-goals">Your Learning Goals (comma-separated):</label>
-        <textarea id="learning-goals" placeholder="Enter learning goals like Data Scientist, Full Stack Developer, etc." required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="difficulty-level">Difficulty Level:</label>
-        <select id="difficulty-level" required>
-          <option value="Beginner">Beginner</option>
-          <option value="Intermediate">Intermediate</option>
-          <option value="Advanced">Advanced</option>
-        </select>
-      </div>
-      <button type="submit">Get Recommendations</button>
-    </form>
+    <!-- Header -->
+    <header class="header">
+      <h1>Personalized Learning Planner</h1>
+      <p>Get a custom roadmap and recommendations tailored to your learning goals.</p>
+    </header>
 
-    <div id="results" style="display: none;">
-      <h2>Personalized Recommendations</h2>
-      <ul id="recommendations-list"></ul>
+    <!-- Input Section -->
+    <section class="input-section">
+      <h2>Tell Us About Yourself</h2>
+      <form id="learning-plan-form">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
 
-      <h2>Personalized Roadmap</h2>
-      <ul id="roadmap-list"></ul>
-    </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="interests">Your Interests (e.g., Python, JavaScript):</label>
+          <input type="text" id="interests" placeholder="Add your interests, separated by commas" required>
+        </div>
+
+        <div class="form-group">
+          <label for="learning-goals">Your Learning Goals (e.g., Data Scientist, Full Stack Developer):</label>
+          <input type="text" id="learning-goals" placeholder="Add your goals, separated by commas" required>
+        </div>
+
+        <div class="form-group">
+          <label for="difficulty-level">Difficulty Level:</label>
+          <select id="difficulty-level" required>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-button">Generate Plan</button>
+      </form>
+    </section>
+
+    <!-- Output Section -->
+    <section class="output-section">
+      <div id="recommendations" class="recommendations">
+        <h2>Recommendations</h2>
+        <ul id="recommendations-list">
+          <!-- Recommendations will be dynamically added here -->
+        </ul>
+      </div>
+
+      <div id="roadmap" class="roadmap">
+        <h2>Roadmap</h2>
+        <ol id="roadmap-list">
+          <!-- Roadmap steps will be dynamically added here -->
+        </ol>
+      </div>
+    </section>
   </div>
 
   <script src="script.js"></script>
